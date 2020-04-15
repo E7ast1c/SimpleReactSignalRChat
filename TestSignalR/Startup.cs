@@ -11,6 +11,9 @@ namespace TestSignalR
 {
     public class Startup
     {
+        readonly string DefaultOrigins = "AllowAllOrigins";
+        private object CORSDefaults;
+
         public Startup(IConfiguration configuration)
         {
             Configuration = configuration;
@@ -24,6 +27,13 @@ namespace TestSignalR
 
             services.AddControllersWithViews();
 
+            services.AddCors(o => o.AddPolicy("MyPolicy", builder =>
+            {
+                builder.AllowAnyOrigin()
+                       .AllowAnyMethod()
+                       .AllowAnyHeader();
+            }));
+
             // In production, the React files will be served from this directory
             services.AddSpaStaticFiles(configuration =>
             {
@@ -35,6 +45,8 @@ namespace TestSignalR
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
+            
+
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
@@ -45,12 +57,12 @@ namespace TestSignalR
                 // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
                 app.UseHsts();
             }
-
+            app.UseCors(builder => builder.AllowAnyOrigin());
             app.UseHttpsRedirection();
             app.UseStaticFiles();
             app.UseSpaStaticFiles();
             app.UseRouting();
-            app.UseCors("AllowCors");
+ 
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllerRoute(
@@ -64,10 +76,10 @@ namespace TestSignalR
             {
                 spa.Options.SourcePath = "ClientApp";
 
-                if (env.IsDevelopment())
-                {
-                    spa.UseReactDevelopmentServer(npmScript: "start");
-                }
+                //if (env.IsDevelopment())
+                //{
+                //    spa.UseReactDevelopmentServer(npmScript: "start");
+                //}
             });
         }
     }

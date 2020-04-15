@@ -16,7 +16,7 @@ export class Home extends PureComponent {
 
   componentDidMount() {
     let conn = new signalR.HubConnectionBuilder()
-      .withUrl("https://localhost:5001/chat")
+      .withUrl("https://172.18.25.209:5001/chat")
       .configureLogging(signalR.LogLevel.Information)
       .build();
     setTimeout(() => this.start(), 5000);
