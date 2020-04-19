@@ -3,9 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.29905.134
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestSignalR", "TestSignalR\TestSignalR.csproj", "{046C2841-B510-42C2-96C7-9F8639B00005}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ChatRazor", "ChatRazor\ChatRazor.csproj", "{91210716-9079-4D35-9E6F-121DECD0582D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TestSignalR", "TestSignalR\TestSignalR.csproj", "{046C2841-B510-42C2-96C7-9F8639B00005}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -17,10 +15,6 @@ Global
 		{046C2841-B510-42C2-96C7-9F8639B00005}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{046C2841-B510-42C2-96C7-9F8639B00005}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{046C2841-B510-42C2-96C7-9F8639B00005}.Release|Any CPU.Build.0 = Release|Any CPU
-		{91210716-9079-4D35-9E6F-121DECD0582D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{91210716-9079-4D35-9E6F-121DECD0582D}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{91210716-9079-4D35-9E6F-121DECD0582D}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{91210716-9079-4D35-9E6F-121DECD0582D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -5,6 +5,7 @@ html, body {
     background: #e5e5e5;
     font-family: 'Lato', sans-serif;
     margin: 0px auto;
+    max-width: 50rem;
 }
 ::selection{
   background: rgba(82,179,217,0.3);
@@ -87,7 +88,7 @@ a{
     background: none;
     margin: 0;
     padding: 0 0 50px 0;
-    margin-top: 60px;
+    margin-top: 10px;
     margin-bottom: 10px;
 }
 .chat li {
@@ -301,7 +302,7 @@ emoji.funny{background-image: url(https://i.imgur.com/qKia58V.png);}
 /* T Y P E */
 
 input.textarea {
-    position: fixed;
+    position: relative;
     bottom: 0px;
     left: 0px;
     right: 0px;
@@ -317,7 +318,7 @@ input.textarea {
     font-weight: 400;
 }
 .send {
-    position: fixed;
+    position: relative;
     display: block;
     bottom: 8px;
     left: 85vw;
@@ -328,4 +329,28 @@ input.textarea {
     background-size: cover;
     z-index: 100;
     cursor: pointer;
+}
+
+.letters {
+    display: inline-block;
+    font-size: 1em;
+    width: 2.5em;
+    height: 2.5em;
+    line-height: 2.5em;
+    text-align: center;
+    border-radius: 50%;
+    background: plum;
+    vertical-align: middle;
+    margin-right: 1em;
+    color: white;
+}
+
+.connected::after {
+    content: " ●";
+    color: green;
+}
+
+.disconnected::after {
+    content: " ●";
+    color: red;
 }

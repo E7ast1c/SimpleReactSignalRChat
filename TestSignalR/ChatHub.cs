@@ -8,16 +8,9 @@ namespace TestSignalR
 {
     public class Chat : Hub
     {
-        async public Task SendToAll(string name, string message)
+        async public Task SendMessage(string UUID, string name, string message)
         {
-           await Clients.All.SendAsync("sendToAll", name, message);
-                //InvokeAsync("sendToAll", name, message);
-        }
-
-        async public Task SendMessage(string name, string message)
-        {
-            await Clients.All.SendAsync("ReceiveMessage", name, message);
-            //InvokeAsync("sendToAll", name, message);
+            await Clients.All.SendAsync("ReceiveMessage", UUID, name, message, DateTime.UtcNow);
         }
     }
 }
